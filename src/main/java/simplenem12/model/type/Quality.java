@@ -2,8 +2,6 @@
 
 package simplenem12.model.type;
 
-import simplenem12.exception.InvalidQualityException;
-
 /**
  * Represents meter read quality in SimpleNem12
  */
@@ -16,8 +14,7 @@ public enum Quality {
     try {
       return Quality.valueOf(value);
     } catch (IllegalArgumentException exception) {
-      System.err.println("Invalid quality value - " + value);
-      throw new InvalidQualityException("Invalid quality value - " + value);
+      throw new IllegalArgumentException("Invalid quality value - " + value);
     }
   }
 }

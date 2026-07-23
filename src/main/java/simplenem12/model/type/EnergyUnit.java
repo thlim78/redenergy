@@ -1,7 +1,7 @@
 // Copyright Red Energy Limited 2017
 package simplenem12.model.type;
 
-import simplenem12.exception.InvalidEnergyUnitException;
+import java.util.Optional;
 
 /**
  * Represents the KWH energy unit in SimpleNem12
@@ -13,8 +13,7 @@ public enum EnergyUnit {
     try {
       return EnergyUnit.valueOf(value);
     } catch (IllegalArgumentException exception) {
-      System.err.println("Invalid energy unit value - " + value);
-      throw new InvalidEnergyUnitException("Invalid energy unit value - " + value);
+      throw new IllegalArgumentException("Invalid energy unit value - " + value);
     }
   }
 }
